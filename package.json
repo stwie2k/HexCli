@@ -1,0 +1,40 @@
+{
+  "name": "@ali/hexcli",
+  "version": "3.1.15",
+  "description": "HexCli - 环境配置调试命令行工具",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "hex": "bin/hex.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "WebDriverAgent",
+    "README.md"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build",
+    "hexcli": "npx hex"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "uuid": "^9.0.0",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.0",
+    "@types/ws": "^8.5.10",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^4.1.9"
+  }
+}
